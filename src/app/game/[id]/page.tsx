@@ -4,44 +4,50 @@ import Image from "next/image"
 import { Container } from "@/components/container"
 import { Label } from "./components/label"
 import { GameCard } from "@/components/GameCard"
-import { Metadata } from "next"
- 
-interface PropsParams {
-    params: {
-        id: string,
-    }
-}
+import { Metadata, ResolvingMetadata } from "next";
 
-export async function generateMetadata({ params }: PropsParams): Promise<Metadata> {
+
+// interface PropsParams {
+//     params: {
+//         id: string,
+//     }
+// }
+
+// export async function generateMetadata({ params }: PropsParams): Promise<Metadata> {
+
+export async function generateMetadata(
+    { params }: { params: { id: string } },
+    parent: ResolvingMetadata
+): Promise<Metadata> {
     try {
         const response: GameProps = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=game&id=${params.id}`, { next: { revalidate: 60 } })
-        .then((res) => res.json())
-        .catch(() => {
-            return{
-                title: "DalyGames - Descubra jogos incríveis para se divertir."
-            }
-        })
+            .then((res) => res.json())
+            .catch(() => {
+                return {
+                    title: "DalyGames - Descubra jogos incríveis para se divertir."
+                }
+            })
 
-        
 
-        return{
+
+        return {
             title: response.title,
-            description: `${response.description.slice(0,100)}...`,
+            description: `${response.description.slice(0, 100)}...`,
             openGraph: {
                 title: response.title,
                 images: [response.image_url]
             }
         }
-        
-        
+
+
 
     } catch (err) {
-        return{
+        return {
             title: "DalyGames - Descubra jogos incríveis para se divertir."
         }
     }
 
-    
+
 }
 
 
@@ -68,7 +74,7 @@ async function getGameSorted() {
     }
 }
 
-export default async function Game({ params: {id} }: { params: { id: string } }) {
+export default async function Game({ params: { id } }: { params: { id: string } }) {
 
     const data: GameProps = await getData(id)
     const sortedGame: GameProps = await getGameSorted()
