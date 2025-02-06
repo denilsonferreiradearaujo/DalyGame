@@ -5,7 +5,7 @@ import { Container } from "@/components/container"
 import { Label } from "./components/label"
 import { GameCard } from "@/components/GameCard"
 import { Metadata, ResolvingMetadata } from "next";
-
+import { PageProps } from "next";
 
 // interface PropsParams {
 //     params: {
@@ -74,7 +74,10 @@ async function getGameSorted() {
     }
 }
 
-export default async function Game({ params: { id } }: { params: { id: string } }) {
+// export default async function Game({ params: { id } }: { params: { id: string } }) {
+
+export default async function Game({ params }: { params: { id: string } }) {
+    const id = params.id as string;
 
     const data: GameProps = await getData(id)
     const sortedGame: GameProps = await getGameSorted()
