@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DalyGames
 
-## Getting Started
+DalyGames é um projeto desenvolvido utilizando **Next.js**, **React** e **Tailwind CSS**. O objetivo é criar uma plataforma de Cartazes de Games, e também aprimorar conhecimentos, criandos páginas interativas com o Framework NextJs componentizando do lado do Servidor e cliente.
 
-First, run the development server:
+## ✨ Tecnologias Utilizadas
 
+- **Next.js 15.1.6** - Framework React para aplicações web otimizadas
+- **React 19** - Biblioteca JavaScript para criação de interfaces interativas
+- **Tailwind CSS 3.4.1** - Framework CSS utilitário para estilização
+- **TypeScript 5** - Superset do JavaScript para tipagem estática
+- **React Icons 5.4.0** - Biblioteca de ícones para React
+
+## 🛠️ Instalação e Configuração
+
+Antes de iniciar, certifique-se de ter o **Node.js** instalado em sua máquina.
+
+### 1. Clone o repositório
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone git clone https://github.com/denilsonferreiradearaujo/DalyGame
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Acesse o diretório do projeto
+```bash
+cd dalygames
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Instale as dependências
+```bash
+npm install
+# ou
+yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Execute o projeto em ambiente de desenvolvimento
+```bash
+npm run dev
+# ou
+yarn dev
+```
+O projeto estará rodando em `http://localhost:3000`.
 
-## Learn More
+## 📈 Scripts Disponíveis
 
-To learn more about Next.js, take a look at the following resources:
+- **`npm run dev`** - Inicia o servidor Next.js em modo de desenvolvimento.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Criado por [Denilson Araujo](https://github.com/denilsonferreiradearaujo)!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
